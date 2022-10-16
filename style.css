@@ -40,4 +40,13 @@ h3 {
 
 .bold {
     font-weight: 700;
+    border-style: hidden;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    font-size: 40px;
+    width: 800px;
+    margin: auto;
 }
