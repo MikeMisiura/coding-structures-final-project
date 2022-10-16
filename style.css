@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(162, 192, 255);
+    font-family: 'Fuzzy Bubbles', cursive;
+    /* font-family: 'Montserrat', sans-serif; */
+}
+
+h3 {
+    text-align: center;
+}
+
+.createOrder {
+    border: 5px solid black;
+    width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form {
+    border: 5px solid black;
+    width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#order {
+    border: 5px solid black;
+    width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.bold {
+    font-weight: 700;
+}

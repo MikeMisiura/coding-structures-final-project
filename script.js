@@ -59,7 +59,7 @@ function calculateTotal(toppingArray) {
     // console.log(crust);
     // console.log(sauce);
     // console.log(toppings);
-    console.log(orderString);
-    console.log(toppingString);
-    console.log(total);
+    // console.log(orderString);
+    // console.log(toppingString);
+    // console.log(total);
 }
