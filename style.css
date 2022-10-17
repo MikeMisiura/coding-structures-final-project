@@ -28,6 +28,21 @@ h3 {
     text-align: left;
 }
 
+#details {
+    border: 5px solid black;
+    width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#processingFeeMsg {
+    font-size: smaller;
+    line-height: 0px;
+}
+
 #order {
     border: 5px solid black;
     width: 800px;

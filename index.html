@@ -81,16 +81,57 @@
                 <option value="Olives">Olives</option>
             </select>
             <br>
-            <button type="submit" id="btn">Create Order</button>
         </form>
+    </div>
+
+    <div id="details">
+        <label for="deliveryMethod">Delivery or Pick Up?</label>
+        <select id="deliveryMethod">
+            <option value="delivery">Delivery</option>
+            <option value="pick up">Pick Up</option>
+        </select>
+        <br>
+        <label for="state">Choose Your State</label>
+        <select id="state">
+            <option value="CA">California</option>
+            <option value="ID">Idaho</option>
+            <option value="MT">Montana</option>
+            <option value="NV">Nevada</option>
+            <option value="OR">Orgon</option>
+            <option value="UT">Utah</option>
+            <option value="WA">Washington</option>
+            <option value="WY">Wyoming</option>
+        </select>
+        <br>
+        <label for="tip">Please Tip Our Staff</label>
+        <input type="number" id="tip" min="0" >
+        <br>
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod">
+            <option value="cash">Cash</option>
+            <option value="debit">Debit Card</option>
+            <option value="credit">Credit Card</option>
+            <option value="check">Check</option>
+        </select>
+        <p id="processingFeeMsg">
+            3% processing fee on all credit card transactions
+        </p>
+        <br>
+        <button type="submit" id="btn">Create Order</button>
     </div>
 
     <div id="order">
         <p class="bold">Completed Pizza Order:</p>
         <div id="pizzaOrder"></div>
         <div id="toppings"></div>
+        <p class="bold">Subtotal:</p>
+        <div id="subtotal"></div>
+        <div id="deliveryFee"></div>
+        <div id="processingFee"></div>
+        <div id="tipThankYou"></div>
+        <div id="salesTax"></div>
         <p class="bold">Sales Total:</p>
-        <div id="total">$</div>
+        <div id="total"></div>
     </div>
 
     <footer>
