@@ -28,6 +28,21 @@ h3 {
     text-align: left;
 }
 
+#details {
+    border: 5px solid black;
+    width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#processingFeeMsg {
+    font-size: smaller;
+    line-height: 0px;
+}
+
 #order {
     border: 5px solid black;
     width: 800px;
@@ -40,4 +55,17 @@ h3 {
 
 .bold {
     font-weight: 700;
+    border-style: hidden;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    font-size: 40px;
+    width: 800px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
 }

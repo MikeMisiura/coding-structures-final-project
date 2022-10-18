@@ -14,7 +14,7 @@
 
 <body>
     <header>
-
+        <h1>Mike's Pizza Parlor</h1>
     </header>
 
     <div class="createOrder">
@@ -38,32 +38,106 @@
     <div class="form">
         <form>
             <label for="crust">Choose Your Crust</label>
-            <input type="text" id="crust" />
+            <select id="crust">
+                <option value="Original">Original</option>
+                <option value="Thin Crust">Thin Crust</option>
+            </select>
             <br>
             <label for="sauce">Choose Your Sauce</label>
-            <input type="text" id="sauce" />
+            <select id="sauce">
+                <option value="Classic Tomato">Classic Tomato</option>
+                <option value="Spicy Marinara">Spicy Marinara</option>
+                <option value="White Garlic Sauce">White Garlic Sauce</option>
+            </select>
             <br>
             <label for="top1">Topping 1:</label>
-            <input type="text" id="top1" />
+            <select id="top1">
+                <option value="None">None</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Cheese">Cheese</option>
+                <option value="Mushrooms">Mushrooms</option>
+                <option value="Baby Spinach">Baby Spinach</option>
+                <option value="Olives">Olives</option>
+            </select>
             <label for="top2">Topping 2:</label>
-            <input type="text" id="top2" />
+            <select id="top2">
+                <option value="None">None</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Cheese">Cheese</option>
+                <option value="Mushrooms">Mushrooms</option>
+                <option value="Baby Spinach">Baby Spinach</option>
+                <option value="Olives">Olives</option>
+            </select>
             <label for="top3">Topping 3:</label>
-            <input type="text" id="top3" />
+            <select id="top3">
+                <option value="None">None</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Cheese">Cheese</option>
+                <option value="Mushrooms">Mushrooms</option>
+                <option value="Baby Spinach">Baby Spinach</option>
+                <option value="Olives">Olives</option>
+            </select>
             <br>
-            <button type="submit" id="btn">Create Order</button>
         </form>
+    </div>
+
+    <div id="details">
+        <label for="deliveryMethod">Delivery or Pick Up?</label>
+        <select id="deliveryMethod">
+            <option value="delivery">Delivery</option>
+            <option value="pick up">Pick Up</option>
+        </select>
+        <br>
+        <label for="state">Choose Your State</label>
+        <select id="state">
+            <option value="CA">California</option>
+            <option value="ID">Idaho</option>
+            <option value="MT">Montana</option>
+            <option value="NV">Nevada</option>
+            <option value="OR">Orgon</option>
+            <option value="UT">Utah</option>
+            <option value="WA">Washington</option>
+            <option value="WY">Wyoming</option>
+        </select>
+        <br>
+        <label for="tip">Please Tip Our Staff</label>
+        <input type="number" id="tip" min="0">
+        <br>
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod">
+            <option value="cash">Cash</option>
+            <option value="debit">Debit Card</option>
+            <option value="credit">Credit Card</option>
+            <option value="check">Check</option>
+        </select>
+        <p id="processingFeeMsg">
+            3% processing fee on all credit card transactions
+        </p>
+        <br>
+        <button type="submit" id="btn">Create Order</button>
     </div>
 
     <div id="order">
         <p class="bold">Completed Pizza Order:</p>
         <div id="pizzaOrder"></div>
         <div id="toppings"></div>
+        <!-- <p class="bold">Subtotal:</p> -->
+        <div id="subtotal"></div>
+        <div id="deliveryFee"></div>
+        <div id="processingFee"></div>
+        <div id="tipThankYou"></div>
+        <div id="salesTax"></div>
         <p class="bold">Sales Total:</p>
-        <div id="total">$</div>
+        <div id="total"></div>
+        <p class="bold" id="timeMsg">Your order will be ready at </p>
     </div>
 
     <footer>
-
+        <p>Thank you for choosing Mike's Pizza Parlor!</p>
+        <p>We appretiate you!</p>
     </footer>
     <script src="script.js"></script>
 </body>
