@@ -2,12 +2,14 @@
 let crust;
 let sauce;
 let deliveryMethod;
+let deliveryMethodMsg;
 let state;
 let tip;
 let paymentMethod;
 let deliveryFee;
 let processingFee;
-
+let timeOrder;
+let timeRdyMsg;
 
 // toppings array
 let toppings = [];
@@ -30,7 +32,7 @@ btn.addEventListener("click", function (event) {
     let topping1 = document.getElementById("top1").value;
     let topping2 = document.getElementById("top2").value;
     let topping3 = document.getElementById("top3").value;
-    toppings = [topping1, topping2, topping3]
+    toppings = [topping1, topping2, topping3];
 
     crust = document.getElementById("crust").value;
     sauce = document.getElementById("sauce").value;
@@ -39,25 +41,22 @@ btn.addEventListener("click", function (event) {
     tip = document.getElementById("tip").value;
     paymentMethod = document.getElementById("paymentMethod").value;
 
-    tip = Number(tip)
+    tip = Number(tip);
+
+    timeOrder = new Date();
 
     calculateTotal()
 });
 
 function calculateTotal() {
-console.log(paymentMethod)
     let total = 0;
 
     let subtotal =
         calculateSubtotal();
 
-    if (deliveryMethod = "Delivery") {
-        deliveryFee = 6;
-    } else {
-        deliveryFee = 0;
-    };
-
     tax = calculateTax(subtotal);
+
+    CalculateDeliveryTime()
 
     let sub2 = subtotal + deliveryFee + tax + tip;
 
@@ -71,6 +70,7 @@ console.log(paymentMethod)
     tip = tip.toFixed(2);
     processingFee = processingFee.toFixed(2);
     total = total.toFixed(2);
+
 
     print(subtotal, total)
 }
@@ -93,21 +93,21 @@ function calculateSubtotal(toppingArray) { //return subtotal and set toppingStri
     };
 
     subtotal = subtotal + baseCost;
-    return (subtotal)
+    return (subtotal);
 };
 
 function calculateTax(subtotal) {
 
     let taxrate;
 
-    if (state == "CA") { taxrate = CATax }
-    if (state == "ID") { taxrate = IDTax }
-    if (state == "MT") { taxrate = MTTax }
-    if (state == "NV") { taxrate = NVTax }
-    if (state == "OR") { taxrate = ORTax }
-    if (state == "UT") { taxrate = UTTax }
-    if (state == "WA") { taxrate = WATax }
-    if (state == "WY") { taxrate = WYTax }
+    if (state == "CA") { taxrate = CATax };
+    if (state == "ID") { taxrate = IDTax };
+    if (state == "MT") { taxrate = MTTax };
+    if (state == "NV") { taxrate = NVTax };
+    if (state == "OR") { taxrate = ORTax };
+    if (state == "UT") { taxrate = UTTax };
+    if (state == "WA") { taxrate = WATax };
+    if (state == "WY") { taxrate = WYTax };
 
     let salesTax = subtotal * taxrate * .01;
 
@@ -116,11 +116,29 @@ function calculateTax(subtotal) {
 
 function calculateProcessingFee(sub2) {
     if (paymentMethod == "credit") {
-        processingFee = sub2 * .03
+        processingFee = sub2 * .03;
 
-        return processingFee
+        return processingFee;
     }
     return 0
+}
+
+function CalculateDeliveryTime() {
+    var waitTime;
+    if (deliveryMethod == "delivery") {
+        deliveryFee = 6;
+        deliveryMethodMsg = "delivered";
+        waitTime = 27e5 //45 min;
+    } else {
+        deliveryFee = 0;
+        deliveryMethodMsg = "ready for Pick Up";
+        waitTime = 9e5 //15 min;
+    }
+
+    var timeRdy = new Date(+timeOrder + waitTime);
+
+    timeRdyMsg = timeRdy.toLocaleString()
+
 }
 
 function print(subtotal, total) {
@@ -140,4 +158,6 @@ function print(subtotal, total) {
     document.getElementById("processingFee").innerHTML = "Credit Card Processing Fee: $" + processingFee
     // using += breaks the line when used twice without refreashing
 
+    document.getElementById("timeMsg").innerHTML =
+        "Your order will be " + deliveryMethodMsg + " around " + timeRdyMsg
 }

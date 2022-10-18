@@ -65,3 +65,7 @@ header {
     width: 800px;
     margin: auto;
 }
+
+footer {
+    text-align: center;
+}
